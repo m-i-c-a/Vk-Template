@@ -4,9 +4,9 @@
 #include <vulkan/vulkan.h>
 #include <GLFW/glfw3.h>
 
-// #include <imgui/imgui.h>
-// #include <imgui/backends/imgui_impl_glfw.h>
-// #include <imgui/backends/imgui_impl_opengl3.h>
+#include <imgui/imgui.h>
+#include <imgui/backends/imgui_impl_glfw.h>
+#include <imgui/backends/imgui_impl_vulkan.h>
 
 #include "Defines.hpp"
 #include "Helpers.hpp"
@@ -54,6 +54,12 @@ enum
 
 enum
 {
+    DESCRIPTOR_POOL_IMGUI = 0,
+    DESCRIPTOR_POOL_COUNT 
+};
+
+enum
+{
     BUFFER_VERTEX_TRIANGLE = 0,
     BUFFER_INDEX_TRIANGLE  = 1,
     BUFFER_STAGING         = 2,
@@ -76,6 +82,8 @@ struct VulkanApp
     VkSemaphore semaphore[SEMAPHORE_COUNT];
     VkFence fence[FENCE_COUNT];
 
+    VkDescriptorPool descriptor_pool[DESCRIPTOR_POOL_COUNT];
+
     VkBuffer buffer[BUFFER_COUNT];
     VkDeviceMemory buffer_memory[BUFFER_COUNT];
     uint32_t index_count[BUFFER_COUNT];
@@ -89,6 +97,24 @@ struct AppManager
     uint32_t window_width = 500;
     uint32_t window_height = 500;
 } g_app;
+
+void gui()
+{
+    // Start the Dear ImGui frame
+    ImGui_ImplVulkan_NewFrame();
+    ImGui_ImplGlfw_NewFrame();
+    ImGui::NewFrame();
+
+    if (ImGui::Begin("Gui"))
+    {
+
+        ImGui::End();
+    }
+
+    ImGui::Render();
+    ImDrawData* draw_data = ImGui::GetDrawData();
+    ImGui_ImplVulkan_RenderDrawData(draw_data, g_vk_app.command_buffer[COMMAND_BUFFER_RENDER]);
+}
 
 void init()
 {
@@ -343,6 +369,35 @@ void init()
         g_vk_app.fence[FENCE_IMAGE_ACQUIRE] = create_fence(g_vk.device, false);
     }
 
+    // Descriptor Pools / Sets
+    {
+        // No idea how many descriptors imgui needs
+        std::array<VkDescriptorPoolSize, 11> pool_sizes {{
+            { VK_DESCRIPTOR_TYPE_SAMPLER, 1000 },
+            { VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, 1000 },
+            { VK_DESCRIPTOR_TYPE_SAMPLED_IMAGE, 1000 },
+            { VK_DESCRIPTOR_TYPE_STORAGE_IMAGE, 1000 },
+            { VK_DESCRIPTOR_TYPE_UNIFORM_TEXEL_BUFFER, 1000 },
+            { VK_DESCRIPTOR_TYPE_STORAGE_TEXEL_BUFFER, 1000 },
+            { VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, 1000 },
+            { VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, 1000 },
+            { VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER_DYNAMIC, 1000 },
+            { VK_DESCRIPTOR_TYPE_STORAGE_BUFFER_DYNAMIC, 1000 },
+            { VK_DESCRIPTOR_TYPE_INPUT_ATTACHMENT, 1000 }
+        }};
+
+        const VkDescriptorPoolCreateInfo pool_create_info {
+            .sType = VK_STRUCTURE_TYPE_DESCRIPTOR_POOL_CREATE_INFO,
+            .pNext = nullptr,
+            .flags = 0x0,
+            .maxSets = 2u,
+            .poolSizeCount = static_cast<uint32_t>(pool_sizes.size()),
+            .pPoolSizes = pool_sizes.data(),
+        };
+
+        VK_CHECK(vkCreateDescriptorPool(g_vk.device, &pool_create_info, nullptr, &g_vk_app.descriptor_pool[DESCRIPTOR_POOL_IMGUI]));
+    }
+
     // create scene
     {
         std::array<float, 9> vertices {
@@ -423,17 +478,22 @@ void render()
     vkCmdBindIndexBuffer(cmd_buff, g_vk_app.buffer[BUFFER_INDEX_TRIANGLE], 0, VK_INDEX_TYPE_UINT32);
     vkCmdDrawIndexed(cmd_buff, g_vk_app.index_count[BUFFER_VERTEX_TRIANGLE], 1, 0, 0, 0);
 
+    gui();
+
     vkCmdEndRenderPass(cmd_buff);
 
     VK_CHECK(vkEndCommandBuffer(cmd_buff));
+}
 
+void submit()
+{
     const VkSubmitInfo submit_info{
         .sType = VK_STRUCTURE_TYPE_SUBMIT_INFO,
         .waitSemaphoreCount = 0,
         .pWaitSemaphores = nullptr,
         .pWaitDstStageMask = nullptr,
         .commandBufferCount = 1,
-        .pCommandBuffers = &cmd_buff,
+        .pCommandBuffers = &g_vk_app.command_buffer[COMMAND_BUFFER_RENDER],
         .signalSemaphoreCount = 0,
         .pSignalSemaphores = nullptr,
     };
@@ -458,12 +518,11 @@ void render()
     VK_CHECK(vkDeviceWaitIdle(g_vk.device));
 }
 
-void gui()
-{
-}
-
 void release()
 {
+    for (size_t i = 0; i < DESCRIPTOR_POOL_COUNT; ++i)
+        vkDestroyDescriptorPool(g_vk.device, g_vk_app.descriptor_pool[DESCRIPTOR_POOL_IMGUI], nullptr);
+
     for (size_t i = 0; i < BUFFER_COUNT; ++i)
     {
         vkFreeMemory(g_vk.device, g_vk_app.buffer_memory[i], nullptr);
@@ -512,6 +571,66 @@ int main()
     init();
     LOG("-- End -- Init\n");
 
+    // Setup Dear ImGui context
+    IMGUI_CHECKVERSION();
+    ImGui::CreateContext();
+    ImGuiIO& io = ImGui::GetIO(); (void)io;
+    //io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;     // Enable Keyboard Controls
+    //io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;      // Enable Gamepad Controls
+
+    // Setup Dear ImGui style
+    ImGui::StyleColorsDark();
+
+    // Setup Platform/Renderer backends
+    ImGui_ImplGlfw_InitForVulkan(g_app.window, true);
+    ImGui_ImplVulkan_InitInfo init_info = {};
+    init_info.Instance = g_vk.instance;
+    init_info.PhysicalDevice = g_vk.physical_device;
+    init_info.Device = g_vk.device;
+    init_info.QueueFamily = g_vk.queue_family_indices[QUEUE_GRAPHICS];
+    init_info.Queue = g_vk.queues[QUEUE_GRAPHICS];
+    init_info.PipelineCache = VK_NULL_HANDLE;
+    init_info.DescriptorPool = g_vk_app.descriptor_pool[DESCRIPTOR_POOL_IMGUI];
+    init_info.Subpass = 0;
+    init_info.MinImageCount = 2;
+    init_info.ImageCount = static_cast<uint32_t>(g_vk.swapchain_images.size()),
+    init_info.MSAASamples = VK_SAMPLE_COUNT_1_BIT;
+    init_info.Allocator = nullptr;
+    init_info.CheckVkResultFn = nullptr;
+    ImGui_ImplVulkan_Init(&init_info, g_vk_app.renderpass[RENDERPASS_DEFAULT]);
+
+    // Upload Fonts
+    {
+        // Use any command queue
+        VkCommandBuffer command_buffer = g_vk_app.command_buffer[COMMAND_BUFFER_RENDER];
+
+        const VkCommandBufferBeginInfo command_buffer_begin_info {
+            .sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO,
+            .flags = VK_COMMAND_BUFFER_USAGE_ONE_TIME_SUBMIT_BIT
+        };
+
+        VK_CHECK(vkBeginCommandBuffer(command_buffer, &command_buffer_begin_info));
+
+        ImGui_ImplVulkan_CreateFontsTexture(command_buffer);
+
+        VK_CHECK(vkEndCommandBuffer(command_buffer));
+
+        const VkSubmitInfo submit_info {
+            .sType = VK_STRUCTURE_TYPE_SUBMIT_INFO,
+            .commandBufferCount = 1,
+            .pCommandBuffers = &command_buffer
+        };
+
+        VK_CHECK(vkQueueSubmit(g_vk.queues[QUEUE_GRAPHICS], 1, &submit_info, VK_NULL_HANDLE));
+
+        VK_CHECK(vkDeviceWaitIdle(g_vk.device));
+
+        ImGui_ImplVulkan_DestroyFontUploadObjects();
+
+        vkResetCommandPool(g_vk.device, g_vk_app.command_pool[COMMAND_POOL_DEFAULT], 0x0);
+    }
+
+
     LOG("-- Begin -- Run\n");
 
     while (!glfwWindowShouldClose(g_app.window))
@@ -520,12 +639,21 @@ int main()
 
         render();
 
-        gui();
+        // gui();
+
+        submit();
 
         glfwSwapBuffers(g_app.window);
     }
 
+    vkDeviceWaitIdle(g_vk.device);
+
     LOG("-- End -- Run\n");
+
+    // ImGui_ImplVulkanH_DestroyWindow(g_vk.instance, g_vk.device, &g_MainWindowData, g_Allocator);
+    ImGui_ImplVulkan_Shutdown();
+    ImGui_ImplGlfw_Shutdown();
+    ImGui::DestroyContext();
 
     release();
 

@@ -150,6 +150,195 @@ Helpers.cpp.s:
 	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/Helpers.cpp.s
 .PHONY : Helpers.cpp.s
 
+extern/imgui/backends/imgui_impl_glfw.o: extern/imgui/backends/imgui_impl_glfw.cpp.o
+
+.PHONY : extern/imgui/backends/imgui_impl_glfw.o
+
+# target to build an object file
+extern/imgui/backends/imgui_impl_glfw.cpp.o:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/extern/imgui/backends/imgui_impl_glfw.cpp.o
+.PHONY : extern/imgui/backends/imgui_impl_glfw.cpp.o
+
+extern/imgui/backends/imgui_impl_glfw.i: extern/imgui/backends/imgui_impl_glfw.cpp.i
+
+.PHONY : extern/imgui/backends/imgui_impl_glfw.i
+
+# target to preprocess a source file
+extern/imgui/backends/imgui_impl_glfw.cpp.i:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/extern/imgui/backends/imgui_impl_glfw.cpp.i
+.PHONY : extern/imgui/backends/imgui_impl_glfw.cpp.i
+
+extern/imgui/backends/imgui_impl_glfw.s: extern/imgui/backends/imgui_impl_glfw.cpp.s
+
+.PHONY : extern/imgui/backends/imgui_impl_glfw.s
+
+# target to generate assembly for a file
+extern/imgui/backends/imgui_impl_glfw.cpp.s:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/extern/imgui/backends/imgui_impl_glfw.cpp.s
+.PHONY : extern/imgui/backends/imgui_impl_glfw.cpp.s
+
+extern/imgui/backends/imgui_impl_vulkan.o: extern/imgui/backends/imgui_impl_vulkan.cpp.o
+
+.PHONY : extern/imgui/backends/imgui_impl_vulkan.o
+
+# target to build an object file
+extern/imgui/backends/imgui_impl_vulkan.cpp.o:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/extern/imgui/backends/imgui_impl_vulkan.cpp.o
+.PHONY : extern/imgui/backends/imgui_impl_vulkan.cpp.o
+
+extern/imgui/backends/imgui_impl_vulkan.i: extern/imgui/backends/imgui_impl_vulkan.cpp.i
+
+.PHONY : extern/imgui/backends/imgui_impl_vulkan.i
+
+# target to preprocess a source file
+extern/imgui/backends/imgui_impl_vulkan.cpp.i:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/extern/imgui/backends/imgui_impl_vulkan.cpp.i
+.PHONY : extern/imgui/backends/imgui_impl_vulkan.cpp.i
+
+extern/imgui/backends/imgui_impl_vulkan.s: extern/imgui/backends/imgui_impl_vulkan.cpp.s
+
+.PHONY : extern/imgui/backends/imgui_impl_vulkan.s
+
+# target to generate assembly for a file
+extern/imgui/backends/imgui_impl_vulkan.cpp.s:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/extern/imgui/backends/imgui_impl_vulkan.cpp.s
+.PHONY : extern/imgui/backends/imgui_impl_vulkan.cpp.s
+
+extern/imgui/imgui.o: extern/imgui/imgui.cpp.o
+
+.PHONY : extern/imgui/imgui.o
+
+# target to build an object file
+extern/imgui/imgui.cpp.o:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/extern/imgui/imgui.cpp.o
+.PHONY : extern/imgui/imgui.cpp.o
+
+extern/imgui/imgui.i: extern/imgui/imgui.cpp.i
+
+.PHONY : extern/imgui/imgui.i
+
+# target to preprocess a source file
+extern/imgui/imgui.cpp.i:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/extern/imgui/imgui.cpp.i
+.PHONY : extern/imgui/imgui.cpp.i
+
+extern/imgui/imgui.s: extern/imgui/imgui.cpp.s
+
+.PHONY : extern/imgui/imgui.s
+
+# target to generate assembly for a file
+extern/imgui/imgui.cpp.s:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/extern/imgui/imgui.cpp.s
+.PHONY : extern/imgui/imgui.cpp.s
+
+extern/imgui/imgui_demo.o: extern/imgui/imgui_demo.cpp.o
+
+.PHONY : extern/imgui/imgui_demo.o
+
+# target to build an object file
+extern/imgui/imgui_demo.cpp.o:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/extern/imgui/imgui_demo.cpp.o
+.PHONY : extern/imgui/imgui_demo.cpp.o
+
+extern/imgui/imgui_demo.i: extern/imgui/imgui_demo.cpp.i
+
+.PHONY : extern/imgui/imgui_demo.i
+
+# target to preprocess a source file
+extern/imgui/imgui_demo.cpp.i:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/extern/imgui/imgui_demo.cpp.i
+.PHONY : extern/imgui/imgui_demo.cpp.i
+
+extern/imgui/imgui_demo.s: extern/imgui/imgui_demo.cpp.s
+
+.PHONY : extern/imgui/imgui_demo.s
+
+# target to generate assembly for a file
+extern/imgui/imgui_demo.cpp.s:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/extern/imgui/imgui_demo.cpp.s
+.PHONY : extern/imgui/imgui_demo.cpp.s
+
+extern/imgui/imgui_draw.o: extern/imgui/imgui_draw.cpp.o
+
+.PHONY : extern/imgui/imgui_draw.o
+
+# target to build an object file
+extern/imgui/imgui_draw.cpp.o:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/extern/imgui/imgui_draw.cpp.o
+.PHONY : extern/imgui/imgui_draw.cpp.o
+
+extern/imgui/imgui_draw.i: extern/imgui/imgui_draw.cpp.i
+
+.PHONY : extern/imgui/imgui_draw.i
+
+# target to preprocess a source file
+extern/imgui/imgui_draw.cpp.i:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/extern/imgui/imgui_draw.cpp.i
+.PHONY : extern/imgui/imgui_draw.cpp.i
+
+extern/imgui/imgui_draw.s: extern/imgui/imgui_draw.cpp.s
+
+.PHONY : extern/imgui/imgui_draw.s
+
+# target to generate assembly for a file
+extern/imgui/imgui_draw.cpp.s:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/extern/imgui/imgui_draw.cpp.s
+.PHONY : extern/imgui/imgui_draw.cpp.s
+
+extern/imgui/imgui_tables.o: extern/imgui/imgui_tables.cpp.o
+
+.PHONY : extern/imgui/imgui_tables.o
+
+# target to build an object file
+extern/imgui/imgui_tables.cpp.o:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/extern/imgui/imgui_tables.cpp.o
+.PHONY : extern/imgui/imgui_tables.cpp.o
+
+extern/imgui/imgui_tables.i: extern/imgui/imgui_tables.cpp.i
+
+.PHONY : extern/imgui/imgui_tables.i
+
+# target to preprocess a source file
+extern/imgui/imgui_tables.cpp.i:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/extern/imgui/imgui_tables.cpp.i
+.PHONY : extern/imgui/imgui_tables.cpp.i
+
+extern/imgui/imgui_tables.s: extern/imgui/imgui_tables.cpp.s
+
+.PHONY : extern/imgui/imgui_tables.s
+
+# target to generate assembly for a file
+extern/imgui/imgui_tables.cpp.s:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/extern/imgui/imgui_tables.cpp.s
+.PHONY : extern/imgui/imgui_tables.cpp.s
+
+extern/imgui/imgui_widgets.o: extern/imgui/imgui_widgets.cpp.o
+
+.PHONY : extern/imgui/imgui_widgets.o
+
+# target to build an object file
+extern/imgui/imgui_widgets.cpp.o:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/extern/imgui/imgui_widgets.cpp.o
+.PHONY : extern/imgui/imgui_widgets.cpp.o
+
+extern/imgui/imgui_widgets.i: extern/imgui/imgui_widgets.cpp.i
+
+.PHONY : extern/imgui/imgui_widgets.i
+
+# target to preprocess a source file
+extern/imgui/imgui_widgets.cpp.i:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/extern/imgui/imgui_widgets.cpp.i
+.PHONY : extern/imgui/imgui_widgets.cpp.i
+
+extern/imgui/imgui_widgets.s: extern/imgui/imgui_widgets.cpp.s
+
+.PHONY : extern/imgui/imgui_widgets.s
+
+# target to generate assembly for a file
+extern/imgui/imgui_widgets.cpp.s:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/extern/imgui/imgui_widgets.cpp.s
+.PHONY : extern/imgui/imgui_widgets.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -189,6 +378,27 @@ help:
 	@echo "... Helpers.o"
 	@echo "... Helpers.i"
 	@echo "... Helpers.s"
+	@echo "... extern/imgui/backends/imgui_impl_glfw.o"
+	@echo "... extern/imgui/backends/imgui_impl_glfw.i"
+	@echo "... extern/imgui/backends/imgui_impl_glfw.s"
+	@echo "... extern/imgui/backends/imgui_impl_vulkan.o"
+	@echo "... extern/imgui/backends/imgui_impl_vulkan.i"
+	@echo "... extern/imgui/backends/imgui_impl_vulkan.s"
+	@echo "... extern/imgui/imgui.o"
+	@echo "... extern/imgui/imgui.i"
+	@echo "... extern/imgui/imgui.s"
+	@echo "... extern/imgui/imgui_demo.o"
+	@echo "... extern/imgui/imgui_demo.i"
+	@echo "... extern/imgui/imgui_demo.s"
+	@echo "... extern/imgui/imgui_draw.o"
+	@echo "... extern/imgui/imgui_draw.i"
+	@echo "... extern/imgui/imgui_draw.s"
+	@echo "... extern/imgui/imgui_tables.o"
+	@echo "... extern/imgui/imgui_tables.i"
+	@echo "... extern/imgui/imgui_tables.s"
+	@echo "... extern/imgui/imgui_widgets.o"
+	@echo "... extern/imgui/imgui_widgets.i"
+	@echo "... extern/imgui/imgui_widgets.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

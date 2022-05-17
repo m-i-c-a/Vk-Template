@@ -30,6 +30,76 @@ CMakeFiles/app.dir/Helpers.cpp.o: /home/mica/Downloads/1.2.198.1/x86_64/include/
 CMakeFiles/app.dir/Helpers.cpp.o: /home/mica/Downloads/1.2.198.1/x86_64/include/vulkan/vulkan_xlib.h
 CMakeFiles/app.dir/Helpers.cpp.o: /home/mica/Downloads/1.2.198.1/x86_64/include/vulkan/vulkan_xlib_xrandr.h
 
+CMakeFiles/app.dir/extern/imgui/backends/imgui_impl_glfw.cpp.o: ../extern/imgui/imconfig.h
+CMakeFiles/app.dir/extern/imgui/backends/imgui_impl_glfw.cpp.o: ../extern/imgui/imgui.h
+CMakeFiles/app.dir/extern/imgui/backends/imgui_impl_glfw.cpp.o: ../extern/imgui/backends/imgui_impl_glfw.cpp
+CMakeFiles/app.dir/extern/imgui/backends/imgui_impl_glfw.cpp.o: ../extern/imgui/backends/imgui_impl_glfw.h
+
+CMakeFiles/app.dir/extern/imgui/backends/imgui_impl_vulkan.cpp.o: ../extern/imgui/imconfig.h
+CMakeFiles/app.dir/extern/imgui/backends/imgui_impl_vulkan.cpp.o: ../extern/imgui/imgui.h
+CMakeFiles/app.dir/extern/imgui/backends/imgui_impl_vulkan.cpp.o: ../extern/imgui/backends/imgui_impl_vulkan.cpp
+CMakeFiles/app.dir/extern/imgui/backends/imgui_impl_vulkan.cpp.o: ../extern/imgui/backends/imgui_impl_vulkan.h
+CMakeFiles/app.dir/extern/imgui/backends/imgui_impl_vulkan.cpp.o: /home/mica/Downloads/1.2.198.1/x86_64/include/vk_video/vulkan_video_codec_h264std.h
+CMakeFiles/app.dir/extern/imgui/backends/imgui_impl_vulkan.cpp.o: /home/mica/Downloads/1.2.198.1/x86_64/include/vk_video/vulkan_video_codec_h264std_decode.h
+CMakeFiles/app.dir/extern/imgui/backends/imgui_impl_vulkan.cpp.o: /home/mica/Downloads/1.2.198.1/x86_64/include/vk_video/vulkan_video_codec_h264std_encode.h
+CMakeFiles/app.dir/extern/imgui/backends/imgui_impl_vulkan.cpp.o: /home/mica/Downloads/1.2.198.1/x86_64/include/vk_video/vulkan_video_codec_h265std.h
+CMakeFiles/app.dir/extern/imgui/backends/imgui_impl_vulkan.cpp.o: /home/mica/Downloads/1.2.198.1/x86_64/include/vk_video/vulkan_video_codec_h265std_decode.h
+CMakeFiles/app.dir/extern/imgui/backends/imgui_impl_vulkan.cpp.o: /home/mica/Downloads/1.2.198.1/x86_64/include/vk_video/vulkan_video_codec_h265std_encode.h
+CMakeFiles/app.dir/extern/imgui/backends/imgui_impl_vulkan.cpp.o: /home/mica/Downloads/1.2.198.1/x86_64/include/vk_video/vulkan_video_codecs_common.h
+CMakeFiles/app.dir/extern/imgui/backends/imgui_impl_vulkan.cpp.o: /home/mica/Downloads/1.2.198.1/x86_64/include/vulkan/vk_platform.h
+CMakeFiles/app.dir/extern/imgui/backends/imgui_impl_vulkan.cpp.o: /home/mica/Downloads/1.2.198.1/x86_64/include/vulkan/vulkan.h
+CMakeFiles/app.dir/extern/imgui/backends/imgui_impl_vulkan.cpp.o: /home/mica/Downloads/1.2.198.1/x86_64/include/vulkan/vulkan_android.h
+CMakeFiles/app.dir/extern/imgui/backends/imgui_impl_vulkan.cpp.o: /home/mica/Downloads/1.2.198.1/x86_64/include/vulkan/vulkan_beta.h
+CMakeFiles/app.dir/extern/imgui/backends/imgui_impl_vulkan.cpp.o: /home/mica/Downloads/1.2.198.1/x86_64/include/vulkan/vulkan_core.h
+CMakeFiles/app.dir/extern/imgui/backends/imgui_impl_vulkan.cpp.o: /home/mica/Downloads/1.2.198.1/x86_64/include/vulkan/vulkan_directfb.h
+CMakeFiles/app.dir/extern/imgui/backends/imgui_impl_vulkan.cpp.o: /home/mica/Downloads/1.2.198.1/x86_64/include/vulkan/vulkan_fuchsia.h
+CMakeFiles/app.dir/extern/imgui/backends/imgui_impl_vulkan.cpp.o: /home/mica/Downloads/1.2.198.1/x86_64/include/vulkan/vulkan_ggp.h
+CMakeFiles/app.dir/extern/imgui/backends/imgui_impl_vulkan.cpp.o: /home/mica/Downloads/1.2.198.1/x86_64/include/vulkan/vulkan_ios.h
+CMakeFiles/app.dir/extern/imgui/backends/imgui_impl_vulkan.cpp.o: /home/mica/Downloads/1.2.198.1/x86_64/include/vulkan/vulkan_macos.h
+CMakeFiles/app.dir/extern/imgui/backends/imgui_impl_vulkan.cpp.o: /home/mica/Downloads/1.2.198.1/x86_64/include/vulkan/vulkan_metal.h
+CMakeFiles/app.dir/extern/imgui/backends/imgui_impl_vulkan.cpp.o: /home/mica/Downloads/1.2.198.1/x86_64/include/vulkan/vulkan_screen.h
+CMakeFiles/app.dir/extern/imgui/backends/imgui_impl_vulkan.cpp.o: /home/mica/Downloads/1.2.198.1/x86_64/include/vulkan/vulkan_vi.h
+CMakeFiles/app.dir/extern/imgui/backends/imgui_impl_vulkan.cpp.o: /home/mica/Downloads/1.2.198.1/x86_64/include/vulkan/vulkan_wayland.h
+CMakeFiles/app.dir/extern/imgui/backends/imgui_impl_vulkan.cpp.o: /home/mica/Downloads/1.2.198.1/x86_64/include/vulkan/vulkan_win32.h
+CMakeFiles/app.dir/extern/imgui/backends/imgui_impl_vulkan.cpp.o: /home/mica/Downloads/1.2.198.1/x86_64/include/vulkan/vulkan_xcb.h
+CMakeFiles/app.dir/extern/imgui/backends/imgui_impl_vulkan.cpp.o: /home/mica/Downloads/1.2.198.1/x86_64/include/vulkan/vulkan_xlib.h
+CMakeFiles/app.dir/extern/imgui/backends/imgui_impl_vulkan.cpp.o: /home/mica/Downloads/1.2.198.1/x86_64/include/vulkan/vulkan_xlib_xrandr.h
+
+CMakeFiles/app.dir/extern/imgui/imgui.cpp.o: ../extern/imgui/imconfig.h
+CMakeFiles/app.dir/extern/imgui/imgui.cpp.o: ../extern/imgui/imgui.cpp
+CMakeFiles/app.dir/extern/imgui/imgui.cpp.o: ../extern/imgui/imgui.h
+CMakeFiles/app.dir/extern/imgui/imgui.cpp.o: ../extern/imgui/imgui_internal.h
+CMakeFiles/app.dir/extern/imgui/imgui.cpp.o: ../extern/imgui/imstb_textedit.h
+
+CMakeFiles/app.dir/extern/imgui/imgui_demo.cpp.o: ../extern/imgui/imconfig.h
+CMakeFiles/app.dir/extern/imgui/imgui_demo.cpp.o: ../extern/imgui/imgui.h
+CMakeFiles/app.dir/extern/imgui/imgui_demo.cpp.o: ../extern/imgui/imgui_demo.cpp
+
+CMakeFiles/app.dir/extern/imgui/imgui_draw.cpp.o: ../extern/imgui/imconfig.h
+CMakeFiles/app.dir/extern/imgui/imgui_draw.cpp.o: ../extern/imgui/imgui.h
+CMakeFiles/app.dir/extern/imgui/imgui_draw.cpp.o: ../extern/imgui/imgui_draw.cpp
+CMakeFiles/app.dir/extern/imgui/imgui_draw.cpp.o: ../extern/imgui/imgui_internal.h
+CMakeFiles/app.dir/extern/imgui/imgui_draw.cpp.o: ../extern/imgui/imstb_rectpack.h
+CMakeFiles/app.dir/extern/imgui/imgui_draw.cpp.o: ../extern/imgui/imstb_textedit.h
+CMakeFiles/app.dir/extern/imgui/imgui_draw.cpp.o: ../extern/imgui/imstb_truetype.h
+CMakeFiles/app.dir/extern/imgui/imgui_draw.cpp.o: ../extern/imgui/misc/freetype/imgui_freetype.h
+
+CMakeFiles/app.dir/extern/imgui/imgui_tables.cpp.o: ../extern/imgui/imconfig.h
+CMakeFiles/app.dir/extern/imgui/imgui_tables.cpp.o: ../extern/imgui/imgui.h
+CMakeFiles/app.dir/extern/imgui/imgui_tables.cpp.o: ../extern/imgui/imgui_internal.h
+CMakeFiles/app.dir/extern/imgui/imgui_tables.cpp.o: ../extern/imgui/imgui_tables.cpp
+CMakeFiles/app.dir/extern/imgui/imgui_tables.cpp.o: ../extern/imgui/imstb_textedit.h
+
+CMakeFiles/app.dir/extern/imgui/imgui_widgets.cpp.o: ../extern/imgui/imconfig.h
+CMakeFiles/app.dir/extern/imgui/imgui_widgets.cpp.o: ../extern/imgui/imgui.h
+CMakeFiles/app.dir/extern/imgui/imgui_widgets.cpp.o: ../extern/imgui/imgui_internal.h
+CMakeFiles/app.dir/extern/imgui/imgui_widgets.cpp.o: ../extern/imgui/imgui_widgets.cpp
+CMakeFiles/app.dir/extern/imgui/imgui_widgets.cpp.o: ../extern/imgui/imstb_textedit.h
+
+CMakeFiles/app.dir/main.cpp.o: ../extern/imgui/backends/imgui_impl_glfw.h
+CMakeFiles/app.dir/main.cpp.o: ../extern/imgui/backends/imgui_impl_vulkan.h
+CMakeFiles/app.dir/main.cpp.o: ../extern/imgui/imconfig.h
+CMakeFiles/app.dir/main.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/app.dir/main.cpp.o: ../Defines.hpp
 CMakeFiles/app.dir/main.cpp.o: ../Helpers.hpp
 CMakeFiles/app.dir/main.cpp.o: ../main.cpp

@@ -6,5 +6,5 @@ CXX_FLAGS = -g   -std=gnu++17
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/mica/Downloads/1.2.198.1/x86_64/include 
+CXX_INCLUDES = -I/home/mica/Desktop/UTD/Vk-Template/extern/imgui -I/home/mica/Desktop/UTD/Vk-Template/extern/imgui/backends -I/home/mica/Downloads/1.2.198.1/x86_64/include -I/home/mica/Desktop/UTD/Vk-Template/extern 
 
