@@ -1,0 +1,17 @@
+{
+    "configurations": [
+        {
+            "name" : "Linux",
+            "includePath": [
+                "${VULKAN_SDK}/include",
+                "${workspaceFolder}/extern",
+                "${default}"
+            ],
+            "cppStandard": "${default}",
+            "intelliSenseMode": "linux-gcc-x64",
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "gnu17"
+        }
+    ],
+    "version": 4
+}
