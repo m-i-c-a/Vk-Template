@@ -96,7 +96,23 @@ struct AppManager
     GLFWwindow *window;
     uint32_t window_width = 500;
     uint32_t window_height = 500;
+
+    bool render_gui = true;
 } g_app;
+
+
+void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
+{
+    switch (key)
+    {
+        case GLFW_KEY_ESCAPE:
+            if (action == GLFW_PRESS)
+                g_app.render_gui = !g_app.render_gui;
+            break;
+        default:
+            break;
+    };
+}
 
 void gui()
 {
@@ -108,8 +124,8 @@ void gui()
     if (ImGui::Begin("Gui"))
     {
 
-        ImGui::End();
     }
+    ImGui::End();
 
     ImGui::Render();
     ImDrawData* draw_data = ImGui::GetDrawData();
@@ -478,7 +494,10 @@ void render()
     vkCmdBindIndexBuffer(cmd_buff, g_vk_app.buffer[BUFFER_INDEX_TRIANGLE], 0, VK_INDEX_TYPE_UINT32);
     vkCmdDrawIndexed(cmd_buff, g_vk_app.index_count[BUFFER_VERTEX_TRIANGLE], 1, 0, 0, 0);
 
-    gui();
+    if (g_app.render_gui)
+    {
+        gui();
+    }
 
     vkCmdEndRenderPass(cmd_buff);
 
@@ -566,6 +585,7 @@ int main()
         EXIT("=> Failure <=\n");
     }
     glfwMakeContextCurrent(g_app.window);
+    glfwSetKeyCallback(g_app.window, key_callback);
 
     LOG("-- Begin -- Init\n");
     init();
@@ -638,8 +658,6 @@ int main()
         glfwPollEvents();
 
         render();
-
-        // gui();
 
         submit();
 
